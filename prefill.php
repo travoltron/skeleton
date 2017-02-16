@@ -106,6 +106,6 @@ foreach ($files as $f) {
     }
     file_put_contents($f, $contents);
 }
-var_dump($values);
+rename('src/SkeletonClass.php', 'src/'.ucfirst($values).'.php');
 echo "Done.\n";
 echo "Now you should remove the file '" . basename(__FILE__) . "'.\n";
