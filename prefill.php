@@ -29,6 +29,7 @@ $replacements = [
     ':package_name'                => function () use(&$values) { return $values['package_name']; },
     ':package_description'         => function () use(&$values) { return $values['package_description']; },
     'League\\Skeleton'             => function () use(&$values) { return $values['psr4_namespace']; },
+    'SkeletonClass'                => function () use(&$values) { return ucfirst($values['package_name']); },
 ];
 
 function read_from_console ($prompt) {
@@ -105,6 +106,6 @@ foreach ($files as $f) {
     }
     file_put_contents($f, $contents);
 }
-
+var_dump($values);
 echo "Done.\n";
 echo "Now you should remove the file '" . basename(__FILE__) . "'.\n";
