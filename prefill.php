@@ -30,6 +30,13 @@ $replacements = [
     ':package_description'         => function () use(&$values) { return $values['package_description']; },
     'League\\Skeleton'             => function () use(&$values) { return $values['psr4_namespace']; },
     'SkeletonClass'                => function () use(&$values) { return ucfirst($values['package_name']); },
+    ':Skeleton'                    => function () use(&$values) { return ucfirst($values['package_name']); },
+    'skeleton:'                    => function () use(&$values) { return $values['package_name']; },
+    'SkeletonCommand'              => function () use(&$values) { return ucfirst($values['package_name']) . 'Command'; },
+    'SkeletonCommand::class'       => function () use(&$values) { return ucfirst($values['package_name']) . 'Command::class'; },
+    'config/skeleton'              => function () use(&$values) { return 'config/' . $values['package_name']; },
+
+
 ];
 
 function read_from_console ($prompt) {
@@ -97,7 +104,10 @@ $files = array_merge(
     glob(__DIR__ . '/*.md'),
     glob(__DIR__ . '/*.xml.dist'),
     glob(__DIR__ . '/composer.json'),
-    glob(__DIR__ . '/src/*.php')
+    glob(__DIR__ . '/src/*.php'),
+    glob(__DIR__ . '/src/commands/*.php'),
+    glob(__DIR__ . '/src/config/*.php'),
+    glob(__DIR__ . '/tests/*.php')
 );
 foreach ($files as $f) {
     $contents = file_get_contents($f);
@@ -106,6 +116,9 @@ foreach ($files as $f) {
     }
     file_put_contents($f, $contents);
 }
-rename('src/SkeletonClass.php', 'src/'.ucfirst($values['package_name']).'.php');
+rename('src/SkeletonClass.php', 'src/' . ucfirst($values['package_name']) . '.php');
+rename('src/SkeletonServiceProvider.php', 'src/' . ucfirst($values['package_name']) . 'ServiceProvider.php');
+rename('src/config/skeleton.php', 'src/config/' . $values['package_name'] . '.php');
+rename('src/commands/SkeletonCommand.php', 'src/commands/' . ucfirst($values['package_name']) . 'Command.php');
 echo "Done.\n";
 echo "Now you should remove the file '" . basename(__FILE__) . "'.\n";
