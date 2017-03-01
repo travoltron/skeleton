@@ -9,26 +9,26 @@
 
 # To use this skeleton
 
-1. Create the directory that you'll be using to work in locally, cd into it and clone this package
+#### Create the directory that you'll be using to work in locally, cd into it and clone this package
 
 ```bash
 $ mkdir directory && cd directory
 $ git clone git@github.com:travoltron/skeleton.git .
 ```
 
-2. Run the bulk updater
+#### Run the bulk updater
 
 ```bash
 $ php prefill.php
 ```
 
-3. Remove the references to this git repo 
+#### Remove the references to this git repo 
 
 ```bash
 $ rm -rf .git*
 ```
 
-4. Initialize a new git repo
+#### Initialize a new git repo
 
 ```bash
 $ git init
@@ -40,7 +40,7 @@ $ git push -u origin master
 
 > This assumes you have created an empty repository at Github. Change to suit your own needs. -travoltron
 
-5. Upload to packagist or include this package in your base Laravel app
+#### Upload to packagist or include this package in your base Laravel app
 
 For people hosting private packages on Github: you can add your token to Composer and include the packages like normal. You just need to tag the release and include this in your `composer.json`:
 
@@ -57,7 +57,7 @@ For people hosting private packages on Github: you can add your token to Compose
 ],
 ```
 
-6. Include the Service Provider in your app
+#### Include the Service Provider in your app
 
 In the file `config/app.php`, find the `'providers'` array and insert 
 `:Vendor\SkeletonClass\SkeletonServiceProvider::class`.
