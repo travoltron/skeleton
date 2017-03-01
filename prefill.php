@@ -30,6 +30,7 @@ $replacements = [
     ':package_description'         => function () use(&$values) { return $values['package_description']; },
     'League\\Skeleton'             => function () use(&$values) { return $values['psr4_namespace']; },
     'SkeletonClass'                => function () use(&$values) { return ucfirst($values['package_name']); },
+    'SkeletonServiceProvider'      => function () use(&$values) { return ucfirst($values['package_name']) . 'ServiceProvider'; },
     ':Skeleton'                    => function () use(&$values) { return ucfirst($values['package_name']); },
     'skeleton:'                    => function () use(&$values) { return $values['package_name']; },
     'SkeletonCommand'              => function () use(&$values) { return ucfirst($values['package_name']) . 'Command'; },

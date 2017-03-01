@@ -7,23 +7,66 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
+# To use this skeleton
+
+1. Create the directory that you'll be using to work in locally and cd into it
+
+```bash
+$ mkdir directory && cd directory
+```
+
+2. Run the bulk updater
+
+```bash
+$ php prefill.php
+```
+
+3. Remove the references to this git repo 
+
+```bash
+$ rm -rf .git*
+```
+
+4. Initialize a new git repo
+
+```bash
+$ git init
+$ git add --all
+$ git commit -m "first commit"
+$ git remote add origin git@github.com:vendor/:package_name.git
+$ git push -u origin master
+```
+
+> This assumes you have created an empty repository at Github. Change to suit your own needs. -travoltron
+
+5. Upload to packagist or include this package in your base Laravel app
+
+For people hosting private packages on Github: you can add your token to Composer and include the packages like normal. You just need to tag the release and include this in your `composer.json`:
+
+```json
+"require": {
+  "php": ">=5.6.4",
+  ":vendor/:package_name": "0.0.1"
+},
+"repositories": [
+  {
+    "type": "vcs",
+    "url":  "git@github.com::vendor/:package_name.git"
+  }
+],
+```
+
+6. Include the Service Provider in your app
+
+In the file `config/app.php`, find the `'providers'` array and insert 
+`League\\Skeleton\:package_name::class,`.
+
+Now the commands are registered, as well as the routes. If you plan on making a static class, you can add the :Skeleton class to the `aliases` array in the same file. 
+
+## Description
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
 
 ## Install
 
