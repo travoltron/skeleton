@@ -9,10 +9,11 @@
 
 # To use this skeleton
 
-1. Create the directory that you'll be using to work in locally and cd into it
+1. Create the directory that you'll be using to work in locally, cd into it and clone this package
 
 ```bash
 $ mkdir directory && cd directory
+$ git clone git@github.com:travoltron/skeleton.git .
 ```
 
 2. Run the bulk updater
