@@ -33,7 +33,7 @@ $ rm -rf .git*
 $ git init
 $ git add --all
 $ git commit -m "first commit"
-$ git remote add origin git@github.com:vendor/:package_name.git
+$ git remote add origin git@github.com::vendor/:package_name.git
 $ git push -u origin master
 ```
 
@@ -59,7 +59,7 @@ For people hosting private packages on Github: you can add your token to Compose
 6. Include the Service Provider in your app
 
 In the file `config/app.php`, find the `'providers'` array and insert 
-`League\\Skeleton\:package_name::class,`.
+`:vendor\\\\:package_name\\\\SkeletonServiceProvider::class`.
 
 Now the commands are registered, as well as the routes. If you plan on making a static class, you can add the :Skeleton class to the `aliases` array in the same file. 
 
