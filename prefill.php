@@ -33,10 +33,11 @@ $replacements = [
     'SkeletonClass'                => function () use(&$values) { return ucfirst($values['package_name']); },
     'SkeletonServiceProvider'      => function () use(&$values) { return ucfirst($values['package_name']) . 'ServiceProvider'; },
     ':Skeleton'                    => function () use(&$values) { return ucfirst($values['package_name']); },
-    'skeleton:'                    => function () use(&$values) { return $values['package_name']; },
+    'skeleton:'                    => function () use(&$values) { return $values['package_name'] . ':'; },
     'SkeletonCommand'              => function () use(&$values) { return ucfirst($values['package_name']) . 'Command'; },
     'SkeletonCommand::class'       => function () use(&$values) { return ucfirst($values['package_name']) . 'Command::class'; },
     'config/skeleton'              => function () use(&$values) { return 'config/' . $values['package_name']; },
+    "config_path('skeleton.php')"  => function () use(&$values) { return "config_path('" . $values['package_name'] . ".php')"; },
 
 
 ];
