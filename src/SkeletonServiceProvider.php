@@ -19,7 +19,7 @@ class SkeletonServiceProvider extends ServiceProvider
         ], 'config');
 
         // Publish migrations for use
-        $this->loadMigrationFrom(__DIR__.'/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
         // Transfers specific commands that will be called
         $this->commands($this->commands);
     }
