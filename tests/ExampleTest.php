@@ -2,7 +2,9 @@
 
 namespace League\Skeleton;
 
-class ExampleTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase as TestCase;
+
+class ExampleTest extends TestCase
 {
     /**
      * Test that true does in fact equal true
