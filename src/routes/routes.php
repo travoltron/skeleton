@@ -1,5 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => ':package_name'], function() {
     //
 });
