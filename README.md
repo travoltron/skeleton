@@ -1,7 +1,6 @@
 # :package_name
 
 [![Software License][ico-license]](LICENSE.md)
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 
 # To use this skeleton
 

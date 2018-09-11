@@ -110,6 +110,9 @@ $files = array_merge(
     glob(__DIR__ . '/src/*.php'),
     glob(__DIR__ . '/src/commands/*.php'),
     glob(__DIR__ . '/src/config/*.php'),
+    glob(__DIR__ . '/src/migrations/*.php'),
+    glob(__DIR__ . '/src/routes/*.php'),
+    glob(__DIR__ . '/src/views/*.php'),
     glob(__DIR__ . '/tests/*.php')
 );
 foreach ($files as $f) {
